@@ -2,22 +2,5 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_navigation"
-    app:startDestination="@id/firstFragment">
-
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.tmdb.FirstFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.tmdb.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.tmdb.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+    android:id="@+id/my_navigation">
 </navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tmdb.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"
+        >
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.tmdb.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/TVSeriesFragment"
+        android:name="com.example.tmdb.TVSeriesFragment"
+        android:label="fragment_t_v_series"
+        tools:layout="@layout/fragment_t_v_series" >
+    </fragment>
+</navigation>

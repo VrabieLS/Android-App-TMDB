@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">TMDB</string>
     <string name="home">Acasa</string>
+    <string name="movies">Filme</string>
+    <string name="tv_series">Seriale TV</string>
 </resources>
