@@ -7,18 +7,19 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_round_home"
         android:title="@string/home"
-        app:showAsAction="always" />
+        app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/movies"
         android:icon="@drawable/ic_baseline_movie"
         android:title="@string/movies"
         app:showAsAction="collapseActionView"/>
-    </group>
+
 
     <item
         android:id="@+id/tv_series"
         android:icon="@drawable/ic_baseline_live_tv"
         android:title="@string/tv_series"
-        app:showAsAction="always"/>
+        app:showAsAction="collapseActionView"/>
+    </group>
 </menu>
