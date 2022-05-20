@@ -7,6 +7,14 @@ import android.view.LayoutInflater
 import androidx.navigation.findNavController
 import com.example.tmdb.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationBarView
+import android.content.res.Resources
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.tmdb.ui.movies.viewpager.PagerAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
