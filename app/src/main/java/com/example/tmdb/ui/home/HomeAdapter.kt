@@ -3,35 +3,50 @@ package com.example.tmdb.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.NonNull
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.tmdb.R
-import com.example.tmdb.databinding.FragmentHomeBinding
 import com.example.tmdb.model.Movie
-import com.example.tmdb.network.RetrofitInstance.POSTER_BASE_URL
-import kotlinx.android.synthetic.main.card_view.view.*
+import com.example.tmdb.model.MovieDetails
+import androidx.recyclerview.widget.DiffUtil
+import com.example.tmdb.databinding.CardViewBinding
 
-class HomeAdapter(private val movies: List<Movie>):
-    RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-    class HomeViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        fun bindMovie(movie : Movie){
-            val title=movie.title +"-"+movie.releaseDate.substringBefore("-")
-            itemView.movie_title.text = title
-            itemView.movie_description.text=movie.overview
-            System.out.println("aaaa "+movie.poster)
-            Glide.with(itemView).load(POSTER_BASE_URL + movie.poster).into(itemView.movie_image)
+class HomeAdapter():
+   PagingDataAdapter<MovieDetails,HomeAdapter.HomeViewHolder>(differCallback) {
+
+    var onItemClick: ((MovieDetails) -> Unit)? = null
+    inner class HomeViewHolder(private var binding: CardViewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(movie: MovieDetails?) {
+            binding.item = movie
+            binding.executePendingBindings()
+        }
+
+    }
+
+    companion object {
+        private val differCallback = object : DiffUtil.ItemCallback<MovieDetails>() {
+            override fun areItemsTheSame(oldItem: MovieDetails, newItem: MovieDetails): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: MovieDetails, newItem: MovieDetails): Boolean {
+                return oldItem == newItem
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        return HomeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_view, parent, false))
+        return HomeViewHolder(
+            CardViewBinding.inflate(LayoutInflater.from(parent.context))
+        )
+
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
-        holder.bindMovie(movies[position])
+        holder.bind(getItem(position))
+        holder.itemView.setOnClickListener { onItemClick?.invoke(getItem(position)!!) }
     }
-
-    override fun getItemCount(): Int = movies.size
 }
+

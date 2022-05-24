@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.tmdb.HomeFragment"
+        android:name="com.example.tmdb.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home"
         >
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.example.tmdb.MovieFragment"
+        android:name="com.example.tmdb.ui.movies.MoviesFragment"
         android:label="fragment_movie"
-        tools:layout="@layout/fragment_movie" >
+        tools:layout="@layout/fragment_movies" >
 
     </fragment>
-    <fragment
-        android:id="@+id/TVSeriesFragment"
-        android:name="com.example.tmdb.TVSeriesFragment"
-        android:label="fragment_t_v_series"
-        tools:layout="@layout/fragment_t_v_series" >
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/TVSeriesFragment"-->
+<!--        android:name="com.example.tmdb."-->
+<!--        android:label="fragment_t_v_series"-->
+<!--        tools:layout="@layout/fragment_tvseries" >-->
+<!--    </fragment>-->
 </navigation>

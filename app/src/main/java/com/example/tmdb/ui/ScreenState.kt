@@ -1,4 +1,4 @@
-package com.example.tmdb.ui.tvshow
+package com.example.tmdb.ui
 
 import com.example.tmdb.model.Movie
 

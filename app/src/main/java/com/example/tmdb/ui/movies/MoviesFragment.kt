@@ -27,24 +27,24 @@ class MoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding.apply {
-            viewPagerMovies.adapter = PagerAdapter(this@MoviesFragment)
-            TabLayoutMediator(tabLayoutMovies, viewPagerMovies) { tab, index ->
-                tab.text = when (index) {
-                    0 -> {
-                        "NOW PLAYING"
-                    }
-                    1 -> {
-                        "POPULAR"
-                    }
-                    2 -> {
-                        "UPCOMING"
-                    }
-                    else -> {
-                        throw Resources.NotFoundException("Position Not Found")
-                    }
-                }
-            }.attach()
-        }
+//        _binding.apply {
+//            viewPagerMovies.adapter = PagerAdapter(this@MoviesFragment)
+//            TabLayoutMediator(tabLayoutMovies, viewPagerMovies) { tab, index ->
+//                tab.text = when (index) {
+//                    0 -> {
+//                        "NOW PLAYING"
+//                    }
+//                    1 -> {
+//                        "POPULAR"
+//                    }
+//                    2 -> {
+//                        "UPCOMING"
+//                    }
+//                    else -> {
+//                        throw Resources.NotFoundException("Position Not Found")
+//                    }
+//                }
+//            }.attach()
+//        }
     }
 }
